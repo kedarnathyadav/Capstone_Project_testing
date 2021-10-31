@@ -40,38 +40,64 @@ public class UserPage {
 //		}
 //	}
 //}
-
-
-
-
+	
+	WebDriver driver;
+	
 	@Test
-	public void google() throws IOException {
+	public void startbrowser() throws IOException {
 	
 
 		// TODO Auto-generated method stub
-	System.setProperty("webdriver.chrome.driver","C:\\Users\\KEDARNATH\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\KEDARNATH\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		//System.setProperty("webdriver.edge.driver","J:\\SIMPLILEARN\\SOFTWARES\\SELENIUM JAR FILES\\SELENIUM SETUP\\edgedriver_win64\\msedgedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		//WebDriver driver = new EdgeDriver();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	
 		
+	}
+	
+	
+	@Test(priority = 1)
+	public void login() {
 		driver.get("http://localhost:8080/Capstone_Project/customer-login.jsp");
-		driver.findElement(By.name("email")).sendKeys("kadamk33@gmail.com");
-		driver.findElement(By.name("password")).sendKeys("java@1991");
+		driver.findElement(By.name("email")).sendKeys("kedarnath@gmail.com");
+		driver.findElement(By.name("password")).sendKeys("kedar");
 		driver.findElement(By.className("sign-in")).submit();
-		// click on the profile icon
-		//driver.findElement(By.xpath("//*[@id='gb']/div[2]/div[3]/div/div[2]/div/a")).click();
-		// click on the sign out
-		//WebDriverWait wait = new WebDriverWait(driver,20);
-		//WebElement Test = wait
-				//.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(text(),'Sign out')]")));
-		//Test.click();
-		// driver.quit();
 	}
 
+	@Test(priority = 2)
+	public void searchProd() {
+		driver.findElement(By.name("search")).sendKeys("dis");
+		driver.findElement(By.className("sear-sub")).submit();
+	}
+	@Test(priority = 3)
+	public void selectcategory() {
+		driver.findElement(By.id("mediicine")).click();
+		driver.findElement(By.id("conatctp")).click();
+		driver.findElement(By.id("healthcarep")).click();
+	}
+//	@Test
+//	public void google() throws IOException {
+//	
+//
+//		// TODO Auto-generated method stub
+//		System.setProperty("webdriver.chrome.driver","C:\\Users\\KEDARNATH\\Downloads\\chromedriver_win32\\chromedriver.exe");
+//		//System.setProperty("webdriver.edge.driver","J:\\SIMPLILEARN\\SOFTWARES\\SELENIUM JAR FILES\\SELENIUM SETUP\\edgedriver_win64\\msedgedriver.exe");
+//		WebDriver driver = new ChromeDriver();
+//		//WebDriver driver = new EdgeDriver();
+//		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+//		driver.get("http://localhost:8080/Capstone_Project/customer-login.jsp");
+//		driver.findElement(By.name("email")).sendKeys("kedarnath@gmail.com");
+//		driver.findElement(By.name("password")).sendKeys("kedar");
+//		driver.findElement(By.className("sign-in")).submit();
+//		
+//	}
+//	
 	
-
+	
+	
+	
 
 	
 }
