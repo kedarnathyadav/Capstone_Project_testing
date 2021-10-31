@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Nov 01 00:50:51 IST 2021</td>
+<td>Started on:</td><td>Mon Nov 01 01:45:09 IST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>19 seconds (19792 ms)</td>
+<tr><td>Total time:</td><td>16 seconds (16142 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,18 +75,18 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.capstone.selenium.testing.UserPage.selectcategory()'><b>selectcategory</b><br>Test class: com.capstone.selenium.testing.UserPage</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: java.net.SocketTimeoutException: Read timed out
+<td title='com.capstone.selenium.testing.AdminPage.viewproducts()'><b>viewproducts</b><br>Test class: com.capstone.selenium.testing.AdminPage</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: java.net.SocketTimeoutException: timeout
 Build info: version: &apos;3.9.0&apos;, revision: &apos;698b3178f0&apos;, time: &apos;2018-02-05T14:56:13.134Z&apos;
 System info: host: &apos;DESKTOP-FD11GJE&apos;, ip: &apos;192.168.0.13&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.1&apos;
 Driver info: driver.version: RemoteWebDriver
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:92)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:417)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:465)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at com.capstone.selenium.testing.UserPage.selectcategory(UserPage.java:76)
+	at com.capstone.selenium.testing.AdminPage.viewproducts(AdminPage.java:39)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -112,14 +112,10 @@ Driver info: driver.version: RemoteWebDriver
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.net.SocketTimeoutException: Read timed out
-	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283)
-	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309)
-	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
-	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
-	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:981)
-	at okio.Okio$2.read(Okio.java:139)
-	at okio.AsyncTimeout$2.read(AsyncTimeout.java:237)
+Caused by: java.net.SocketTimeoutException: timeout
+	at okio.Okio$4.newTimeoutException(Okio.java:230)
+	at okio.AsyncTimeout.exit(AsyncTimeout.java:285)
+	at okio.AsyncTimeout$2.read(AsyncTimeout.java:241)
 	at okio.RealBufferedSource.indexOf(RealBufferedSource.java:345)
 	at okio.RealBufferedSource.readUtf8LineStrict(RealBufferedSource.java:217)
 	at okhttp3.internal.http1.Http1Codec.readHeaderLine(Http1Codec.java:212)
@@ -144,18 +140,27 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:157)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	... 31 more
-</pre></div><a href='#' onClick='toggleBox("stack-trace280531669", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace280531669'><pre>org.openqa.selenium.WebDriverException: java.net.SocketTimeoutException: Read timed out
+Caused by: java.net.SocketException: Socket closed
+	at java.base/sun.nio.ch.NioSocketImpl.endRead(NioSocketImpl.java:248)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:327)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:981)
+	at okio.Okio$2.read(Okio.java:139)
+	at okio.AsyncTimeout$2.read(AsyncTimeout.java:237)
+	... 54 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace1091107430", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1091107430'><pre>org.openqa.selenium.WebDriverException: java.net.SocketTimeoutException: timeout
 Build info: version: &apos;3.9.0&apos;, revision: &apos;698b3178f0&apos;, time: &apos;2018-02-05T14:56:13.134Z&apos;
 System info: host: &apos;DESKTOP-FD11GJE&apos;, ip: &apos;192.168.0.13&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.1&apos;
 Driver info: driver.version: RemoteWebDriver
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:92)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:417)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:465)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:430)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at com.capstone.selenium.testing.UserPage.selectcategory(UserPage.java:76)
+	at com.capstone.selenium.testing.AdminPage.viewproducts(AdminPage.java:39)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -181,14 +186,10 @@ Driver info: driver.version: RemoteWebDriver
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.net.SocketTimeoutException: Read timed out
-	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283)
-	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309)
-	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
-	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
-	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:981)
-	at okio.Okio$2.read(Okio.java:139)
-	at okio.AsyncTimeout$2.read(AsyncTimeout.java:237)
+Caused by: java.net.SocketTimeoutException: timeout
+	at okio.Okio$4.newTimeoutException(Okio.java:230)
+	at okio.AsyncTimeout.exit(AsyncTimeout.java:285)
+	at okio.AsyncTimeout$2.read(AsyncTimeout.java:241)
 	at okio.RealBufferedSource.indexOf(RealBufferedSource.java:345)
 	at okio.RealBufferedSource.readUtf8LineStrict(RealBufferedSource.java:217)
 	at okhttp3.internal.http1.Http1Codec.readHeaderLine(Http1Codec.java:212)
@@ -213,9 +214,18 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:157)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	... 31 more
+Caused by: java.net.SocketException: Socket closed
+	at java.base/sun.nio.ch.NioSocketImpl.endRead(NioSocketImpl.java:248)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:327)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:981)
+	at okio.Okio$2.read(Okio.java:139)
+	at okio.AsyncTimeout$2.read(AsyncTimeout.java:237)
+	... 54 more
 </pre></div></td>
 <td>10</td>
-<td>com.capstone.selenium.testing.UserPage@ea6147e</td></tr>
+<td>com.capstone.selenium.testing.AdminPage@4a7f959b</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -225,20 +235,10 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.capstone.selenium.testing.UserPage.login()'><b>login</b><br>Test class: com.capstone.selenium.testing.UserPage</td>
-<td></td>
-<td>5</td>
-<td>com.capstone.selenium.testing.UserPage@ea6147e</td></tr>
-<tr>
-<td title='com.capstone.selenium.testing.UserPage.searchProd()'><b>searchProd</b><br>Test class: com.capstone.selenium.testing.UserPage</td>
-<td></td>
-<td>0</td>
-<td>com.capstone.selenium.testing.UserPage@ea6147e</td></tr>
-<tr>
-<td title='com.capstone.selenium.testing.UserPage.startbrowser()'><b>startbrowser</b><br>Test class: com.capstone.selenium.testing.UserPage</td>
+<td title='com.capstone.selenium.testing.AdminPage.login()'><b>login</b><br>Test class: com.capstone.selenium.testing.AdminPage</td>
 <td></td>
 <td>3</td>
-<td>com.capstone.selenium.testing.UserPage@ea6147e</td></tr>
+<td>com.capstone.selenium.testing.AdminPage@4a7f959b</td></tr>
 </table><p>
 </body>
 </html>

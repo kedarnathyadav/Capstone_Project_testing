@@ -15,6 +15,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
@@ -43,18 +44,28 @@ public class UserPage {
 	
 	WebDriver driver;
 	
-	@Test
-	public void startbrowser() throws IOException {
+//	@Test
+//	public void startbrowser() throws IOException {
+//	
+//
+//		// TODO Auto-generated method stub
+//		System.setProperty("webdriver.chrome.driver","C:\\Users\\KEDARNATH\\Downloads\\chromedriver_win32\\chromedriver.exe");
+//		//System.setProperty("webdriver.edge.driver","J:\\SIMPLILEARN\\SOFTWARES\\SELENIUM JAR FILES\\SELENIUM SETUP\\edgedriver_win64\\msedgedriver.exe");
+//		driver = new ChromeDriver();
+//		//WebDriver driver = new EdgeDriver();
+//		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+//	
+//		
+//	}
 	
-
-		// TODO Auto-generated method stub
+	@BeforeClass
+	public void testSetup() {
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\KEDARNATH\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		//System.setProperty("webdriver.edge.driver","J:\\SIMPLILEARN\\SOFTWARES\\SELENIUM JAR FILES\\SELENIUM SETUP\\edgedriver_win64\\msedgedriver.exe");
 		driver = new ChromeDriver();
 		//WebDriver driver = new EdgeDriver();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-	
-		
+		driver.manage().window().maximize();
 	}
 	
 	
@@ -73,30 +84,28 @@ public class UserPage {
 	}
 	@Test(priority = 3)
 	public void selectcategory() {
-		driver.findElement(By.id("mediicine")).click();
-		driver.findElement(By.id("conatctp")).click();
-		driver.findElement(By.id("healthcarep")).click();
+		driver.findElement(By.cssSelector("#bs-example-navbar-collapse-1 > ul > li:nth-child(3) > a")).click();
+		
+		
 	}
-//	@Test
-//	public void google() throws IOException {
-//	
-//
-//		// TODO Auto-generated method stub
-//		System.setProperty("webdriver.chrome.driver","C:\\Users\\KEDARNATH\\Downloads\\chromedriver_win32\\chromedriver.exe");
-//		//System.setProperty("webdriver.edge.driver","J:\\SIMPLILEARN\\SOFTWARES\\SELENIUM JAR FILES\\SELENIUM SETUP\\edgedriver_win64\\msedgedriver.exe");
-//		WebDriver driver = new ChromeDriver();
-//		//WebDriver driver = new EdgeDriver();
-//		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-//		driver.get("http://localhost:8080/Capstone_Project/customer-login.jsp");
-//		driver.findElement(By.name("email")).sendKeys("kedarnath@gmail.com");
-//		driver.findElement(By.name("password")).sendKeys("kedar");
-//		driver.findElement(By.className("sign-in")).submit();
-//		
-//	}
-//	
 	
+	@Test(priority = 5)
+	public void CartOperations() {
+		driver.findElement(By.className("total")).click();
 	
+	}
 	
+	@Test(priority = 6)
+	public void paymentGateway() {
+		driver.findElement(By.cssSelector("body > div.checkout > div > center:nth-child(2) > a")).click();
+	}
+	
+	@Test(priority = 7)
+	public void orderPrint() {
+		driver.findElement(By.cssSelector("#exampl > center > table > tbody > tr:nth-child(2) > td:nth-child(3) > i")).click();
+		
+	}
+
 	
 
 	
